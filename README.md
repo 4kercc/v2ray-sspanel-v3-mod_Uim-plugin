@@ -1,3 +1,5 @@
+#仅作安装手册备份，使用方法自行研究。
+
 # v2ray-sspanel-v3-mod_Uim-plugin
 
 ## 公告
