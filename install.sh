@@ -356,10 +356,10 @@ install_select(){
     clear
     while true
     do
-    echo  "Which v2ray Docker you'd select:"
+    #echo  "Which v2ray Docker you'd select:"
     for ((i=1;i<=${#software[@]};i++ )); do
         hint="${software[$i-1]}"
-        echo -e "${green}${i}${plain}) ${hint}"
+       # echo -e "${green}${i}${plain}) ${hint}"
     done
    # read -p "Please enter a number (Default ${software[0]}):" selected
     #[ -z "${selected}" ] && selected="1"
@@ -367,12 +367,12 @@ install_select(){
     case "${selected}" in
         1|2|3|4)
         echo
-        echo "You choose = ${software[${selected}-1]}"
+        #echo "You choose = ${software[${selected}-1]}"
         echo
         break
         ;;
         *)
-        echo -e "[${red}Error${plain}] Please only enter a number [1-4]"
+      #  echo -e "[${red}Error${plain}] Please only enter a number [1-4]"
         ;;
     esac
     done
