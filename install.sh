@@ -110,7 +110,7 @@ error_detect_depends(){
 pre_install_docker_compose(){
     # Set ssrpanel_url
     echo "请输入url地址："
-    read -p "(例如：http://baiodu.com  请区分http以及https):" ssrpanel_url
+    read -p "(例如：http://baidu.com  请区分http以及https):" ssrpanel_url
     [ -z "${ssrpanel_url}" ]
     echo
     echo "---------------------------"
