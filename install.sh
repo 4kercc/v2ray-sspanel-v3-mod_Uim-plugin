@@ -109,8 +109,8 @@ error_detect_depends(){
 # Pre-installation settings
 pre_install_docker_compose(){
     # Set ssrpanel_url
-    echo "Please ssrpanel_url"
-    read -p "(There is no default value please make sure you input the right thing):" ssrpanel_url
+    echo "请输入url地址："
+    read -p "(例如：http://baiodu.com  请区分http以及https):" ssrpanel_url
     [ -z "${ssrpanel_url}" ]
     echo
     echo "---------------------------"
@@ -118,8 +118,8 @@ pre_install_docker_compose(){
     echo "---------------------------"
     echo
     # Set ssrpanel key
-    echo "ssrpanel key"
-    read -p "(There is no default value please make sure you input the right thing):" ssrpanel_key
+    echo "请输入mukey"
+    read -p "(此mukey为对接码,.config.php内查阅):" ssrpanel_key
     [ -z "${ssrpanel_key}" ]
     echo
     echo "---------------------------"
@@ -128,8 +128,8 @@ pre_install_docker_compose(){
     echo
 
     # Set ssrpanel speedtest function
-    echo "use ssrpanel speedtest"
-    read -p "(ssrpanel speedtest: Default (6) hours every time):" ssrpanel_speedtest
+    echo "请输入测试时长"
+    read -p "(sspeedtest测速,回车默认6小时,如需关闭,请输入0):" ssrpanel_speedtest
     [ -z "${ssrpanel_speedtest}" ] && ssrpanel_speedtest=6
     echo
     echo "---------------------------"
@@ -138,8 +138,8 @@ pre_install_docker_compose(){
     echo
 
     # Set ssrpanel node_id
-    echo "ssrpanel node_id"
-    read -p "(Default value: 0 ):" ssrpanel_node_id
+    echo "请输入节点id"
+    read -p "(回车默认节点id为0 ):" ssrpanel_node_id
     [ -z "${ssrpanel_node_id}" ] && ssrpanel_node_id=0
     echo
     echo "---------------------------"
@@ -148,31 +148,33 @@ pre_install_docker_compose(){
     echo
 
     # Set V2ray backend API Listen port
-    echo "Setting V2ray backend API Listen port"
-    read -p "(V2ray API Listen port(Default 2333):" v2ray_api_port
-    [ -z "${v2ray_api_port}" ] && v2ray_api_port=2333
-    echo
-    echo "---------------------------"
-    echo "V2ray API Listen port = ${v2ray_api_port}"
-    echo "---------------------------"
-    echo
+    #echo "Setting V2ray backend API Listen port"
+   # read -p "(V2ray API Listen port(Default 2333):" v2ray_api_port
+   # [ -z "${v2ray_api_port}" ] && 
+    v2ray_api_port=2333
+    #echo
+    #echo "---------------------------"
+    #echo "V2ray API Listen port = ${v2ray_api_port}"
+    #echo "---------------------------"
+    #echo
 
     # Set Setting if the node go downwith panel
-    echo "Setting if the node go downwith panel"
-    read -p "(v2ray_downWithPanel (Default 1):" v2ray_downWithPanel
-    [ -z "${v2ray_downWithPanel}" ] && v2ray_downWithPanel=1
-    echo
-    echo "---------------------------"
-    echo "v2ray_downWithPanel = ${v2ray_downWithPanel}"
-    echo "---------------------------"
-    echo
+    #echo "Setting if the node go downwith panel"
+   # read -p "(v2ray_downWithPanel (Default 1):" v2ray_downWithPanel
+    #[ -z "${v2ray_downWithPanel}" ] && 
+    v2ray_downWithPanel=1
+    #echo
+   # echo "---------------------------"
+   # echo "v2ray_downWithPanel = ${v2ray_downWithPanel}"
+   # echo "---------------------------"
+   # echo
 }
 
 pre_install_caddy(){
 
     # Set caddy v2ray domain
-    echo "caddy v2ray domain"
-    read -p "(There is no default value please make sure you input the right thing):" v2ray_domain
+    echo "请输入解析的域名"
+    read -p "(请务必保证域名已经解析并ping已经生效):" v2ray_domain
     [ -z "${v2ray_domain}" ]
     echo
     echo "---------------------------"
@@ -182,18 +184,19 @@ pre_install_caddy(){
 
 
     # Set caddy v2ray path
-    echo "caddy v2ray path"
-    read -p "(Default path: /v2ray):" v2ray_path
-    [ -z "${v2ray_path}" ] && v2ray_path="/v2ray"
-    echo
-    echo "---------------------------"
-    echo "v2ray_path = ${v2ray_path}"
-    echo "---------------------------"
-    echo
+   # echo "caddy v2ray path"
+    #read -p "(Default path: /v2ray):" v2ray_path
+   # [ -z "${v2ray_path}" ] && 
+   v2ray_path="/v2ray"
+   # echo
+   # echo "---------------------------"
+   # echo "v2ray_path = ${v2ray_path}"
+    #echo "---------------------------"
+   # echo
 
     # Set caddy v2ray tls email
-    echo "caddy v2ray tls email"
-    read -p "(No default ):" v2ray_email
+    echo "请输入一个真实邮箱"
+    read -p "(用于申请证书,无其他副作用 ):" v2ray_email
     [ -z "${v2ray_email}" ]
     echo
     echo "---------------------------"
@@ -202,31 +205,33 @@ pre_install_caddy(){
     echo
 
     # Set Caddy v2ray listen port
-    echo "caddy v2ray local listen port"
-    read -p "(Default port: 10550):" v2ray_local_port
-    [ -z "${v2ray_local_port}" ] && v2ray_local_port=10550
-    echo
-    echo "---------------------------"
-    echo "v2ray_local_port = ${v2ray_local_port}"
-    echo "---------------------------"
-    echo
+   # echo "caddy v2ray local listen port"
+   # read -p "(Default port: 10550):" v2ray_local_port
+   # [ -z "${v2ray_local_port}" ] && 
+   v2ray_local_port=10550
+   # echo
+   # echo "---------------------------"
+    #echo "v2ray_local_port = ${v2ray_local_port}"
+   # echo "---------------------------"
+    #echo
 
     # Set Caddy  listen port
-    echo "caddy listen port"
-    read -p "(Default port: 443):" caddy_listen_port
-    [ -z "${caddy_listen_port}" ] && caddy_listen_port=443
-    echo
-    echo "---------------------------"
-    echo "caddy_listen_port = ${caddy_listen_port}"
-    echo "---------------------------"
-    echo
+    #echo "caddy listen port"
+    #read -p "(Default port: 443):" caddy_listen_port
+   # [ -z "${caddy_listen_port}" ] && 
+   caddy_listen_port=443
+   # echo
+   # echo "---------------------------"
+   # echo "caddy_listen_port = ${caddy_listen_port}"
+   # echo "---------------------------"
+   # echo
 
 
 }
 
 # Config docker
 config_docker(){
-    echo "Press any key to start...or Press Ctrl+C to cancel"
+    echo "请按任意键继续,或者按 Ctrl+取消安装."
     char=`get_char`
     cd ${cur_dir}
     echo "install curl"
@@ -484,8 +489,9 @@ for ((i=1;i<=${#operation[@]};i++ )); do
     hint="${operation[$i-1]}"
     echo -e "${green}${i}${plain}) ${hint}"
 done
-read -p "Please enter a number (Default ${operation[0]}):" selected
-[ -z "${selected}" ] && selected="1"
+#read -p "Please enter a number (Default ${operation[0]}):" selected
+#[ -z "${selected}" ] && 
+selected="1"
 case "${selected}" in
     1|2|3|4)
     echo
