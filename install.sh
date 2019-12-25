@@ -366,9 +366,9 @@ install_select(){
     selected="1"
     case "${selected}" in
         1|2|3|4)
-        echo
+        echo "前端添加示例：gov.cn;0;2;tls;ws;path=/v2ray|host=gov.cn|inside_port=10550|outside_port=443"
         #echo "You choose = ${software[${selected}-1]}"
-        echo
+        clear
         break
         ;;
         *)
